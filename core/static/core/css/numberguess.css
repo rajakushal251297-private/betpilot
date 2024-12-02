@@ -1,0 +1,286 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(270deg, #000000, #434343); /* Gradient background */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    animation: fadeIn 1s; /* Fade-in effect for the body */
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.title {
+    color: #FFD700;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(34, 34, 34, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: slideDown 0.5s; /* Slide-down effect for the header */
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #28a745;
+}
+
+/* Main Section Styles */
+main {
+    text-align: center;
+    background-color: rgba(34, 34, 34, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: popIn 0.5s; /* Pop-in effect for main section */
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    animation: bounceIn 0.5s; /* Bounce-in effect for the heading */
+}
+
+@keyframes bounceIn {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.number-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.number-button {
+    background-color: #444; /* Keep existing background color */
+    border: none; /* No border */
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1.5rem;
+    color: #FFD700; /* Gold color for the text */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Added box-shadow transition */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
+}
+
+.number-button:hover {
+    background-color: #666; /* Keep existing hover background */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.6); /* Glow effect on hover */
+}
+
+.number-button.selected {
+    background-color: #FFD700; /* Gold color for selected button */
+    color: #000; /* Black color for the text */
+    transform: scale(1.1); /* Slightly enlarge the selected button */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); /* Glow effect */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.selected-number {
+    margin: 20px 0;
+    font-size: 1.5rem; /* Larger font size for selected number */
+    color: #FFD700; /* Gold color */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7); /* Glow effect for the text */
+    animation: fadeIn 0.5s; /* Fade-in effect */
+}
+
+.play-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
+}
+
+.play-button:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Leaderboard Section Styles */
+.leaderboard {
+    margin-top: 40px;
+    background-color: rgba(34, 34, 34, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 800px;
+    animation: popIn 0.5s;
+}
+
+.leaderboard header h2 {
+    font-size: 1.8rem;
+    color: #FFD700;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    background-color: #333;
+    color: #FFD700;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tab.active {
+    background-color: #FFD700;
+    color: #000;
+}
+
+.tab:hover {
+    background-color: #FFD700;
+    color: #000;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #444;
+}
+
+table th {
+    background-color: #444;
+    color: #FFD700;
+}
+
+table td {
+    background-color: #222;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.fixed-icons {
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgba(34, 34, 34, 0.9);
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.fixed-icons .nav-item {
+    background-color: #333;
+    color: #FFD700;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}

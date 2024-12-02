@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invite Page</title>
+    <link rel="stylesheet" href="{% static 'core/css/invite.css'%}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Invite</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="invite-section">
+        <div class="invite-info">
+            <div class="icon-container">
+                <span class="icon" id="totalInvitedIcon">👥</span>
+                <p>Total Invited</p>
+                <span class="total-number" id="totalInvited">50</span>
+            </div>
+            <div class="icon-container">
+                <span class="icon" id="totalIncomeIcon">💰</span>
+                <p>Total Income</p>
+                <span class="total-number" id="totalIncome">₹5,000</span>
+            </div>
+        </div>
+
+        <div class="terms-container">
+            <h3>Terms and Conditions</h3>
+            <ul class="terms-list">
+                <li> Share link to your friends</li>
+                <li> Make him/her register on our Platform</li>
+                <li> Make him/her Deposit of Minimal 100Rs.</li>
+                <li> Done! You Will get 20% of him/her deposit Amount</li>
+            </ul>
+            <button class="share-link-btn">Share Link</button>
+        </div>
+    </section>
+    <footer>
+        <p></p>
+        <br>
+        <br>
+    </footer>
+
+    <div class="fixed-icons" style="opacity:0.7">
+        <a href="{% url 'home'%}"><button class="nav-item">🏠</button></a>
+        <button class="nav-item">🔜</button>
+        <button class="nav-item">🔜</button>
+        <a href="{% url 'userprofile'%}"><button class="nav-item">👤</button></a>
+    </div>
+    
+
+    <script src="{% static 'core/js/invite.js'%}"></script>
+</body>
+</html>

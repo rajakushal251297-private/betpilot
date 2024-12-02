@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;
+    user-select: none;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+}
+
+h1 {
+    font-size: 2.5rem;
+	color: #FFD700;
+}
+
+h2 {
+    font-size: 2.5rem;
+	color: #FFD700;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.contest-list {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contest-card {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    text-align: center;
+}
+
+.contest-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.contest-card p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #444;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: #ff9900;
+    border-radius: 5px;
+}
+
+.join-btn {
+    background-color: #ff9900;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.join-btn:hover {
+    background-color: #cc7a00;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

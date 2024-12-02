@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joined Contests</title>
+    <link rel="stylesheet" href="{% static 'core/css/mycontest.css'%}">
+    <link rel="stylesheet" href="{% static 'core/css/userprofile.css'%}">
+</head>
+<body>
+    <header>
+        <h1>My Joined Contests</h1>
+    </header>
+
+    <section id="games-section">
+        <!-- Game sections will be dynamically created here -->
+    </section>
+    <footer>
+        <br>
+        <br>
+        <br>
+    </footer>
+
+    <div class="fixed-icons" style="opacity:0.7">
+       <a href="{% url 'home'%}"><button class="nav-item">🏠</button></a> 
+       <button class="nav-item">🔜</button>
+        <button class="nav-item">🔜</button>
+        <a href="{% url 'userprofile'%}"><button class="nav-item">👤</button></a>
+    </div>
+
+
+
+    <script src="{% static 'core/js/mycontest.js'%}"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height for body */
+  background-color: #000000; /* Pure black background */
+  color: #FFFFFF; /* White text for contrast */
+  -webkit-user-select: none; 
+  -moz-user-select: none;    
+  -ms-user-select: none;
+  user-select: none;
+}
+
+header {
+  background-color: #1A1A1A; /* Dark gray for header */
+  padding: 10px;
+  text-align: center;
+}
+
+header nav {
+  display: flex; /* Use flexbox for nav */
+  justify-content: space-between; /* Space between links and wallet button */
+  align-items: center; /* Center items vertically */
+}
+
+header ul {
+  list-style: none;
+}
+
+header ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+header ul li a {
+  color: #FFFFFF; /* White text for links */
+  text-decoration: none;
+}
+
+.wallet-button {
+  background: none; /* No background */
+  border: none; /* No border */
+  color: #FFFFFF; /* White color */
+  font-size: 1.5rem; /* Font size for icon */
+  cursor: pointer; /* Pointer on hover */
+  margin-left: auto; /* Push to the right */
+}
+
+/* h2 Styles */
+h2 {
+    font-size: 3.3rem; /* Big title size */
+    color:   #ffb900; /* Gold color for a casino feel */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Text shadow for depth */
+    font-family: 'Impact', sans-serif; /* Bold font */
+    letter-spacing: 2px; /* Increased letter spacing */
+    text-align: center; /* Center the title */
+    margin: 20px 0; /* Margin around the title */
+    padding: 10px; /* Padding for spacing */
+}
+
+/* Image Section Styles */
+.image-section {
+  padding: 20px;
+  text-align: center; /* Center align title */
+  flex: 1; /* Grow to fill available space */
+  background-color: #111111; /* Slightly lighter black for contrast */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1); /* Subtle shadow */
+}
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 20px; /* Space between images */
+  justify-items: center; /* Center images within grid cells */
+}
+
+.image-container {
+  flex: 1 1 200px; /* Allow images to grow and shrink, with a base size */
+  max-width: 300px; /* Maximum width for each image */
+}
+
+.image-container img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: rounded corners */
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2); /* Optional: shadow for depth */
+}
+
+/* New Application Image Section */
+.app-image-section {
+  padding: 20px;
+  text-align: center; /* Center align title */
+}
+
+.app-image-container {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center the image */
+  align-items: center; /* Center vertically */
+}
+
+.app-image {
+  width: 100%; /* Make the image responsive */
+  max-width: 600px; /* Maximum width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: rounded corners */
+  box-shadow: 0px 0px 20px 15px gray; /* Optional: shadow for depth */
+}
+
+/* Fixed Icons */
+.fixed-icons {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  background-color: #1A1A1A;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.nav-item {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #ffcc00; /* Gold color on hover */
+}
+
+@media(max-width: 768px){
+  .fixed-icons {
+    flex-direction: row; /* Ensure icons are in a row */
+    bottom: 20px; /* Adjust bottom position */
+}
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+}
+
+.modal-content {
+    background-color: #1e1e1e; /* Dark background */
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #f39c12;
+    border-radius: 15px;
+    width: 320px; /* Set a width */
+    color: #f39c12; /* Vibrant text color */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.5s ease; /* Slide in animation */
+    position: relative; /* For close button */
+}
+
+.close {
+    color: #f39c12; /* Vibrant close button color */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: white; /* Change color on hover */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #f39c12; /* Button color */
+    border: none;
+    color: white; /* White text */
+    padding: 12px 18px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s; /* Transition effects */
+    position: relative; /* For ripple effect */
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    transition: transform 0.5s;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    z-index: 0;
+}
+
+button:hover {
+    background-color: #e67e22; /* Darker shade on hover */
+    transform: scale(1.05); /* Scale effect */
+}
+
+button:hover::after {
+    transform: scale(3); /* Ripple effect */
+}
+
+.balance-amount {
+    font-weight: bold; /* Bold balance amount */
+    font-size: 1.5em; /* Larger font size */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Recharge Popup Styles */
+#rechargeModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top of the wallet modal */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+}
+
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.qr-code {
+    width: 150px; /* Set QR code width */
+    height: 150px; /* Set QR code height */
+    margin-bottom: 15px;
+    border-radius: 10px; /* Rounded corners for QR code */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Box shadow */
+}
+
+.upi-id {
+    font-weight: bold; /* Bold UPI ID */
+    font-size: 1.2em; /* Larger font size for UPI ID */
+    color: #f39c12; /* Vibrant text color */
+}
+
+.close {
+    color: #f39c12; /* Vibrant close button color */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: white; /* Change color on hover */
+}
+
+
+
+
+/* Footer Styles */
+footer {
+  background-color: #1A1A1A; /* Dark gray footer */
+  color: #FFFFFF; /* White text */
+  text-align: center;
+  padding: 20px 0;
+}

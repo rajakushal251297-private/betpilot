@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/deposit.css'%}"> <!-- Link to your CSS -->
+    <title>Deposit</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 class="header-title">Bₑₜ ₚᵢₗₒₜ</h1>
+            <button class="wallet-button"><i class="fa-solid fa-wallet"></i> ₹{{balance}}</button>
+        </nav>
+    </header>
+
+    <div class="deposit-container">
+        <h2 id="depositamountstatus">DEPOSIT ₹200</h2>
+        <div class="qr-code" id="qrcode200">
+            <img src="{% static 'core/images/200qr.png'%}" alt="QR Code" class="qr-image">
+        </div>
+        <div class="qr-code" id="qrcode500" style="display:none;">
+            <img src="{% static 'core/images/500qr.png'%}" alt="QR Code" class="qr-image">
+        </div>
+        <div class="qr-code" id="qrcode1000" style="display:none;">
+            <img src="{% static 'core/images/1000qr.png'%}" alt="QR Code" class="qr-image">
+        </div>
+        <p id="statusid">{{status}}</p>
+        <div>
+            <h3>Available Deposits</h3>
+            <div class="deposit-options">
+                <button class="submit-button" id="deposit200" onclick="deposit200fun()">₹200</button>
+                <button class="submit-button" id="deposit500" onclick="deposit500fun()">₹500</button>
+                <button class="submit-button" id="deposit1000" onclick="deposit1000fun()">₹1000</button>
+            </div>
+            <p>Minimum deposit is ₹200.</p>
+            <p>Scan QR code to recharge.</p>
+            <p>After Payment Enter UTR/Reference No. and click on submit.</p>
+        </div>
+
+        <form class="utr-form" method="POST">
+            <div class="form-group">
+                <label for="utr-number">UTR/Reference No.</label>
+                <input type="text" id="utr-number" placeholder="Enter UTR/Reference No." required>
+            </div>
+            <button type="button" id="submitbtn" class="submit-button">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function deposit200fun() {
+            document.getElementById("qrcode200").style.display = "block";
+            document.getElementById("qrcode500").style.display = "none";
+            document.getElementById("qrcode1000").style.display = "none";
+            document.getElementById("depositamountstatus").innerHTML = "DEPOSIT ₹200";
+        }
+
+        function deposit500fun() {
+            document.getElementById("qrcode200").style.display = "none";
+            document.getElementById("qrcode500").style.display = "block";
+            document.getElementById("qrcode1000").style.display = "none";
+            document.getElementById("depositamountstatus").innerHTML = "DEPOSIT ₹500";
+        }
+
+        function deposit1000fun() {
+            document.getElementById("qrcode200").style.display = "none";
+            document.getElementById("qrcode500").style.display = "none";
+            document.getElementById("qrcode1000").style.display = "block";
+            document.getElementById("depositamountstatus").innerHTML = "DEPOSIT ₹1000";
+        }
+        document.getElementById("submitbtn").addEventListener("click", function() {
+            let utr_number=document.getElementById("utr-number").value;
+            let formdata = new FormData();
+            formdata.append("utr_number", utr_number);
+            fetch('/deposit/', {
+                method: 'POST',
+                body: formdata
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                if(data.status == "success") {
+                    document.getElementById("statusid").innerHTML = "Deposit request pending..";
+                }
+                else{
+                    document.getElementById("statusid").innerHTML = "Please enter UTR/Reference No.";
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById("statusid").innerHTML = "somthing went wrong..";
+            }); 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+body {
+    background-color: #000000; /* Set background to black */
+    color: #FFFFFF; /* White text color */
+    font-family: 'Arial', sans-serif; /* Font family */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full height */
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;
+    user-select: none;
+}
+
+header {
+    background-color: #1A1A1A; /* Dark header background */
+    padding: 15px; /* Padding for header */
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+}
+
+.header-title {
+    color: #FFFFFF; /* White color for the header title */
+    font-size: 24px; /* Font size for the title */
+    font-family: 'Cursive', sans-serif; /* Cursive font for the title */
+}
+
+.wallet-button {
+    background: none; /* No background for button */
+    border: none; /* No border */
+    color: #ffcc00; /* Gold color for wallet button */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 18px; /* Font size for button */
+    margin-left: auto; /* Push the wallet button to the right */
+}
+
+.withdraw-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center contents */
+    padding: 20px; /* Padding for spacing */
+    flex: 1; /* Fill remaining space */
+    background-color: #1A1A1A; /* Dark background for the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1); /* Shadow for depth */
+}
+
+.withdraw-container h2 {
+    color: #ffcc00; /* Gold color for the title */
+    margin-bottom: 20px; /* Space below title */
+}
+
+.withdraw-form {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically */
+    width: 100%; /* Full width of container */
+    max-width: 400px; /* Max width for form */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between input groups */
+}
+
+label {
+    color: #FFFFFF; /* White label color */
+    margin-bottom: 5px; /* Space below label */
+}
+
+input {
+    padding: 10px; /* Padding for input fields */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #2C2C2C; /* Slightly lighter dark background */
+    color: #FFFFFF; /* White text for input */
+    font-size: 1rem; /* Font size */
+    width: 100%; /* Full width */
+}
+
+input::placeholder {
+    color: #A0A0A0; /* Light gray placeholder color */
+}
+
+.submit-button {
+    background-color: #f39c12; /* Button color */
+    border: none;
+    color: white; /* White text */
+    padding: 12px 18px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.submit-button:hover {
+    background-color: #e67e22; /* Darker shade on hover */
+}
+
+footer {
+    display: flex; /* Flexbox for layout */
+    justify-content: center; /* Center footer items */
+    padding: 10px 0; /* Padding for footer */
+    background-color: #1A1A1A; /* Dark footer background */
+    position: relative; /* Positioning for fixed icons */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
+}
+
+.fixed-icons {
+    display: flex; /* Flexbox for icon layout */
+}
+
+.nav-item {
+    background: none; /* No background for buttons */
+    border: none; /* No border */
+    color: #ffcc00; /* Gold color for icons */
+    font-size: 24px; /* Icon size */
+    margin: 0 10px; /* Margin between icons */
+    cursor: pointer; /* Pointer cursor */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.nav-item:hover {
+    color: #e67e22; /* Change color on hover */
+}

@@ -1,0 +1,123 @@
+body {
+    background-color: #121212; /* Dark background */
+    color: #d8c30b; /* White text */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;
+    user-select: none;
+}
+
+header {
+    background-color: #1A1A1A;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    color: #e6e6e6;
+    font-size: 24px;
+    font-family: 'Cursive', sans-serif;
+}
+
+.wallet-button {
+    background: none;
+    border: none;
+    color: #ffcc00;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.deposit-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qr-code {
+    margin: 20px 0;
+}
+
+.qr-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.deposit-instructions {
+    list-style-type: disc;
+    color: #ffcc00;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.utr-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2C2C2C;
+    color: #FFFFFF;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.submit-button {
+    background-color: #f39c12;
+    border: none;
+    color: white;
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #e67e22;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #1A1A1A;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.fixed-icons {
+    display: flex;
+}
+
+.nav-item {
+    background: none;
+    border: none;
+    color: #ffcc00;
+    font-size: 24px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    color: #e67e22;
+}

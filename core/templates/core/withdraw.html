@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/withdraw.css'%}"> <!-- Link to your existing CSS -->
+    <title>Withdraw</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 class="header-title">Bₑₜ ₚᵢₗₒₜ</h1>
+            <button class="wallet-button"><i class="fa-solid fa-wallet"></i> ₹{{balance}}</button>
+        </nav>
+    </header>
+
+    <div class="withdraw-container">
+        <h2>WITHDRAW</h2>
+        <form class="withdraw-form" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="number" id="amountid" placeholder="200~50000" name="amount" min="200" required>
+            </div>
+            <div class="form-group">
+                <label for="account-number">Bank Account Number</label>
+                <input type="text" id="account-number-id" placeholder="Enter account number" name="acnumber" required>
+            </div>
+            <div class="form-group">
+                <label for="ifsc-code">IFSC Code</label>
+                <input type="text" id="ifsc-code-id" placeholder="Enter IFSC code" name="ifsccode" required>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+            {% if message %}
+            <div class="form-group">
+                <br>
+                <h2>Withdraw status</h2>
+                <h2>{{message}}</h2>
+            </div>
+            {%endif%}
+        </form>
+    </div>
+
+    <footer>
+        <div class="fixed-icons">
+            <button class="nav-item"><i class="fa-solid fa-home"></i></button>
+            <button class="nav-item"><i class="fa-solid fa-users"></i></button>
+            <button class="nav-item"><i class="fa-solid fa-list"></i></button>
+            <button class="nav-item"><i class="fa-solid fa-user"></i></button>
+        </div>
+    </footer>
+
+</body>
+</html>

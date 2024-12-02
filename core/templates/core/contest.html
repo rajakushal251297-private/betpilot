@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Contests</title>
+    <link rel="stylesheet" href="{% static 'core/css/contest.css'%}">
+</head>
+<body>
+    <header>
+        <h1>All Contests</h1>
+    </header>
+    <main>
+        <div class="contest-list">
+		
+            <div class="contest-card" i d="contest-1">
+                <h2>Super Contest</h2>
+                <p>Prize  : ₹160</p>
+                <p>Entry Fee: ₹20</p>
+                <p>Result at 12pm & 6pm</p>
+                {% comment %} <div class="progress-container">
+                    <div class="progress-bar" style="width: 0%;" id="progress-1"></div>
+                </div> {% endcomment %} 
+				<a href="{% url 'numberguess'%}">
+                <button class="join-btn" data-contest="contest-1">Join Contest</button>
+				</a>
+            </div>
+		
+            <div class="contest-card" id="contest-2">
+                <h2>Mega Contest</h2>
+                <p>Prize  : ₹400</p>
+                <p>Entry Fee: ₹50</p>
+                <p>Result at 12pm & 6pm</p>
+                {% comment %} <div class="progress-container">
+                    <div class="progress-bar" style="width: 0%;" id="progress-2"></div>
+                </div> {% endcomment %}
+                <a href="{% url 'numberguessfifty'%}">
+                <button class="join-btn" data-contest="contest-2">Join Contest</button>
+                </a>
+            </div>
+            {% comment %} <div class="contest-card" id="contest-3">
+                <h2>Mega Contest</h2>
+                <p>Prize  : ₹400</p>
+                <p>Entry Fee: ₹100</p>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 0%;" id="progress-3"></div>
+                </div>
+                <a href="{% url 'numberguess'%}">
+                <button class="join-btn" data-contest="contest-3">Join Contest</button>
+                </a>
+            </div>  {% endcomment %}
+        </div>
+    </main>
+
+    
+
+    <div class="fixed-icons" style="opacity:0.7">
+        <a href="{% url 'home'%}"><button class="nav-item">🏠</button></a>
+        <button class="nav-item">🔜</button>
+        <button class="nav-item">🔜</button>
+        <a href="{% url 'userprofile'%}"><button class="nav-item">👤</button></a>
+    </div>
+
+    <script src="{% static 'core/js/contest.js'%}"></script>
+</body>
+</html>

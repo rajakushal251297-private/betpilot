@@ -1,0 +1,88 @@
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/numberguessfifty.css'%}">
+    <title>NumberBet</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Bₑₜ ₚᵢₗₒₜ</div>
+        <h2 id ="total_amount_id">💰 {{remaining_balance}}</h2>
+        
+        
+    </header>
+    
+    <main>
+        <h1>NUMBER GAME</h1>
+        <div class="number-grid">
+            <!-- Number buttons will be dynamically generated here -->
+        </div>
+        <div class="selected-number">
+            <p><span id="selected-number"></span></p>
+        </div>
+        <button class="play-button" id="play-button">BET</button>
+    </main>
+
+    <!-- Leaderboard Section Starts Here -->
+    <section class="leaderboard">
+        <div class="container">
+            <header>
+                <h2>Leaderboard</h2>
+            </header>
+
+            <div class="tabs">
+                <button id="allWinnersTab" class="tab active">Last Wins</button>
+                <button id="myHistoryTab" class="tab">My History</button>
+            </div>
+
+            <div id="allWinners" class="tab-content active">
+                <h3>Last Wins</h3>
+                <table id="allWinnersTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for num_win in number_last_win_lst%}
+                        <tr>
+                        <td>{{num_win.0}}</td><td>{{num_win.1}}</td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="myHistory" class="tab-content">
+                <h3>My History</h3>
+                <table id="myHistoryTable">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Number</th>
+                            <th>Bet Amount</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id ="my_history_id">
+                        {%for bal in lst_balance%}
+                        <tr>
+                        <td>{{bal.0}}</td><td>{{bal.1}}</td><td>50</td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <!-- Leaderboard Section Ends Here -->
+
+    
+    <script src="{% static 'core/js/numberguessfifty.js'%}"></script>
+    <script src="{% static 'core/js/leadboardfifty.js'%}"></script>
+</body>
+</html>

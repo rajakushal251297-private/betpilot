@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{% static 'core/css/userprofile.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="header-container">
+                <h1>Profile</h1>
+                <button class="logout-btn" id="userlogoutbtn">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="profile-section">
+        <div class="user-info">
+            <div class="user-container">
+                <p class="username">Username: {{user.username.capitalize}}</p>
+               
+            </div>
+            <div class="wallet-container">
+                <p class="wallet-label">Wallet Balance</p>
+                <p class="wallet-balance">{{remaining_balance}}</p>
+            </div>
+        </div>
+
+        <div class="actions">
+            <div class="action-item" id="depositId">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <span class="action-text"><button>Deposit</button></span>
+            
+            </div>
+            <div class="action-item" id="withdrawId">
+                <!-- Wrap the withdraw action in an anchor tag linking to the withdraw page -->
+                <i class="fa-solid fa-arrow-down-long"></i>
+               
+                <span class="action-text">&nbsp<button>Withdraw</button></span>
+            </div>
+            <div class="action-item">
+                <i class="fa-solid fa-headphones"></i>
+                <span class="action-text"><button onclick="window.open('https://t.me/betpilotcare', '_blank')">Customer Support</button></span>
+            </div>
+        </div>
+    </section>
+
+    <div class="fixed-icons" style="opacity:0.7">
+       <a href="{% url 'home'%}"><button class="nav-item">🏠</button></a> 
+       <button class="nav-item">🔜</button>
+       <button class="nav-item">🔜</button>
+        <button class="nav-item">👤</button>
+    </div>
+
+    <script src="{% static 'core/js/userprofile.js'%}"></script>
+</body>
+</html>

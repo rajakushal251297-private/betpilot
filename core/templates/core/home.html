@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bₑₜ ₚᵢₗₒₜ</title>
+  <link rel="stylesheet" href="{% static 'core/css/home.css'%}">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1 class="header-title" style="font-size:2.2rem;">Bₑₜ ₚᵢₗₒₜ</h1> <!-- Added Bet Pilot Text to Header -->
+      <button class="wallet-button"><p>₹{{balance}}</p>💰</button> <!-- Wallet Icon -->
+    </nav>
+  </header>
+
+  <!-- Application Image Section -->
+  <section class="app-image-section">
+    <div class="app-image-container">
+      <img src="{% static 'core/images/bannerfinal.webp'%}" alt="Our Application" class="app-image" oncontextmenu="return false;">
+    </div>
+  </section>
+
+  <!-- Image Gallery Section -->
+  <section class="image-section">
+    <h2>Live Games</h2>
+    <div class="images">
+      <a href="{% url 'colorgame'%}"><div class="image-container">
+        <img src="{% static 'core/images/colorgame.webp'%}" alt="Image 1" oncontextmenu="return false;">
+      </div></a>
+      <div class="image-container">
+        <img src="{% static 'core/images/luck-number.jpg'%}" alt="Image 2" oncontextmenu="return false;">
+      </div>
+      <a href="{% url 'contest'%}">	
+        <div class="image-container">
+          <img src="{% static 'core/images/number0to9games.jpg'%}" alt="Image 3" oncontextmenu="return false;">
+        </div>
+      </a>
+      <div class="image-container">
+        <img src="{% static 'core/images/online-slot.jpg'%}" alt="Image 4" oncontextmenu="return false;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Wallet Modal -->
+  <div class="modal" id="walletModal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>💰 Wallet</h2>
+        <p id="balance">Balance: <span class="balance-amount">₹{{balance}}</span></p>
+        <div class="button-container">
+            <button id="recharge">Recharge</button>
+            <button id="withdraw">Withdraw</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- Recharge Popup -->
+  <div class="modal" id="rechargeModal">
+    <div class="modal-content">
+        <span class="close" id="closeRechargeModal">&times;</span>
+        <h2>Recharge</h2>
+        <div class="qr-container">
+            <img src="{% static 'core/images/Qrcode.png'%}" alt="QR Code" class="qr-code" oncontextmenu="return false;">
+            <p>UPI ID: <span class="upi-id">yourupiid@bank</span></p>
+        </div>
+    </div>
+  </div>
+
+  <footer>
+    <p></p>
+    <br>
+    <br>
+  </footer>
+
+  <div class="fixed-icons" style="opacity:0.7">
+    <button class="nav-item">🏠</button>
+    <button class="nav-item">🔜</button>
+    <button class="nav-item">🔜</button>
+    <a href="{% url 'userprofile'%}"><button class="nav-item">👤</button></a>
+  </div>
+
+  <script src="{% static 'core/js/home.js'%}"></script>
+</body>
+</html>

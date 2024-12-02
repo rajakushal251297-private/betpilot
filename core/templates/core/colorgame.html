@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bₑₜ ₚᵢₗₒₜ</title>
+    <link rel="stylesheet" href="{% static 'core/css/colorgame.css'%}">
+</head>
+<body>
+    <header>
+        <h2>Bₑₜ ₚᵢₗₒₜ</h2>
+    </header>
+
+    <main>
+        <section class="game-section" style="text-align:center;">
+            <div class="ball-container">
+                <p style="width:230px;" id='balanceid'>Balance : ₹{{balance}}</p>
+            </div>
+            <h1>COLOR BALL GAME</h1>
+            <div class="ball-container">
+                <div class="ball blue-ball" onclick="selectBall('blue')">
+                    <span class="ball-text">1.9x</span>
+                </div>
+                <div class="ball green-ball" onclick="selectBall('green')">
+                    <span class="ball-text">1.9x</span>
+                </div>
+                <div class="ball purple-ball" onclick="selectBall('purple')">
+                    <span class="ball-text">5x</span>
+                </div>
+            </div>
+            <div class="timer-container">
+                <h3>Time Remaining</h3>
+                <div class="timer" id="timer">{{displaytime}}</div>
+                <p id="timeremaining" hidden>{{time_remaining}}</p>
+            </div>
+            <div class="selected-ball-message">
+                <p><span id="selected-ball">Please select balls!</span></p>
+            </div>
+        </section>
+
+        <section class="leaderboard">
+            <header>
+                <h2>Leaderboard</h2>
+            </header>
+
+            <div class="tabs">
+                <button id="myHistoryTab" class="tab active">My History</button>
+                <button id="previousResultsTab" class="tab">My Bets</button>
+                <button id="previousHistoryTab" class="tab">Previous History</button>
+            </div>
+
+            <div id="myHistory" class="tab-content active">
+                <h3>My History</h3>
+                <table id="myHistoryTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Ball Color</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userhistoryid">
+                        {%for userwinhistory in allwinrecord_lst%}
+                        <tr>
+                            <td>{{userwinhistory.0|date:"F j, Y ,h:i A"}}</td>
+                            <td><span class="color-badge {{userwinhistory.1}}-ball"></span>{{userwinhistory.1}}</td>
+                            <td>{{userwinhistory.2}}Rs.</td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="previousResults" class="tab-content">
+                <h3>My Bets</h3>
+                <table id="previousResultsTable">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Ball Color</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id='previoushistoryid'>
+                        <!-- Sample Data: This will be dynamically injected here -->
+                         {% for ballcolordata in ballcolorgamedata%}
+                        <tr>
+                            <td>{{ballcolordata.0}}</td>
+                            <td><span class="color-badge {{ballcolordata.1}}-ball"></span>{{ballcolordata.1}}</td>
+                            <td>{{ballcolordata.2}}Rs.</td>
+                        </tr>
+                        {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="previousHistory" class="tab-content">
+                <h3>Last Wins</h3>
+                <table id="previousHistoryTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Ball Color</th>
+                        </tr>
+                    </thead>
+                    <tbody id='allprevioushistoryid'>
+                        {% for history in previous_history%}
+                        <tr>
+                            <td>{{history.0|date:"F j, Y ,h:i A"}}</td>
+                            <td><span class="color-badge {{history.1}}-ball"></span>{{history.1}}</td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Popup for selecting ball and entering amount -->
+    <div id="bet-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p><span id="popup-selected-ball">None</span></p>
+            <div class="amount-container">
+                <button onclick="changeAmount(-1)">&#8722;</button>
+                <input type="number" id="bet-amount" value="0" min="0">
+                <button onclick="changeAmount(1)">&#43;</button>
+            </div>
+            <button id="confirm-bet-button" onclick="confirmBet()">Place Bet</button>
+        </div>
+    </div>
+    <footer>
+        <br>
+        <br>
+        <br>
+        <br>
+      </footer>
+    <div class="fixed-icons" style="opacity:0.7">
+        <a href="{% url 'home'%}"><button class="nav-item">🏠</button></a>
+        <button class="nav-item">🔜</button>
+        <button class="nav-item">🔜</button>
+        <a href="{% url 'userprofile'%}"><button class="nav-item">👤</button></a>
+    </div>
+
+    <script src="{% static 'core/js/colorgame.js'%}"></script>
+</body>
+</html>

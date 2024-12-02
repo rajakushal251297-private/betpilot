@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Contests</title>
+    <link rel="stylesheet" href="{% static 'core/css/colorcontest.css'%}">
+</head>
+<body>
+    <header>
+        <h1>All Contests</h1>
+    </header>
+    <main>
+        <div class="contest-list">
+		
+            <div class="contest-card" id="contest-1">
+                <h2>Contest</h2>
+                <p>Prize: ₹40 </p>
+                <p>Entry Fee: ₹10</p>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 0%;" id="progress-1"></div>
+                </div>
+				<a href="{% url 'colorgame'%}">
+                <button class="join-btn" data-contest="contest-1">Join Contest</button>
+				</a>
+            </div>
+		
+            <div class="contest-card" id="contest-2">
+                <h2> Super Contest</h2>
+                <p>Prize  : ₹100</p>
+                <p>Entry Fee: ₹25</p>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 0%;" id="progress-2"></div>
+                </div>
+                <button class="join-btn" data-contest="contest-2">Join Contest</button>
+            </div>
+            <div class="contest-card" id="contest-3">
+                <h2>Mega Contest </h2>
+                <p>Prize  : ₹400</p>
+                <p>Entry Fee: ₹100</p>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 0%;" id="progress-3"></div>
+                </div>
+                <button class="join-btn" data-contest="contest-3">Join Contest</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p></p>
+    </footer>
+
+    <script src="{% static 'core/js/colorcontest.js'%}"></script>
+</body>
+</html>

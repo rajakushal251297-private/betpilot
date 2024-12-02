@@ -1,0 +1,280 @@
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000; /* Dark theme */
+    color: #FFFFFF; /* White text */
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;
+    user-select: none;
+}
+
+header {
+    background-color: #1A1A1A; /* Dark gray */
+    padding: 10px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #FFFFFF; /* White links */
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.invite-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.invite-info {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #111111; /* Dark background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 200px; /* Set a fixed width */
+}
+
+.icon-container:hover {
+    transform: scale(1.1); /* Zoom on hover */
+    background-color: #333333; /* Slightly lighter on hover */
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #ffcc00; /* Popular gold color for icons */
+}
+
+.total-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+/* Terms and Conditions Styles */
+.terms-container {
+    text-align: center;
+    background-color: #1A1A1A;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.terms-list {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #CCCCCC;
+}
+
+.terms-list li {
+    margin-bottom: 10px;
+}
+
+.share-link-btn {
+    background-color: #ffcc00;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.share-link-btn:hover {
+    background-color: #e6b800;
+}
+
+/* Fixed Icons */
+.fixed-icons {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    background-color: #1A1A1A;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  }
+  
+  .nav-item {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-item:hover {
+    color: #ffcc00; /* Gold color on hover */
+  }
+  
+  @media(max-width: 768px){
+    .fixed-icons {
+      flex-direction: row; /* Ensure icons are in a row */
+      bottom: 20px; /* Adjust bottom position */
+  }
+  }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .icon-container {
+        width: 150px; /* Make icon containers smaller on small screens */
+        padding: 15px;
+    }
+
+    .icon {
+        font-size: 2.5rem;
+    }
+
+    .total-number {
+        font-size: 1.5rem;
+    }
+
+    .fixed-icons {
+        gap: 10px;
+        padding: 8px;
+    }
+
+    .nav-item {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .invite-info {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .icon-container {
+        width: 100%;
+        max-width: 300px; /* Ensuring it doesn't stretch too much on large phones */
+    }
+
+    header nav ul li a {
+        font-size: 1rem; /* Smaller font for mobile */
+    }
+
+    .fixed-icons {
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .nav-item {
+        font-size: 1.2rem; /* Reduce icon size for smaller screens */
+    }
+}
+/* Existing styles ... */
+
+.terms-container {
+    text-align: center;
+    background-color: #1A1A1A;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.terms-list {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #CCCCCC;
+    font-size: 0.9rem; /* Decreased size for terms */
+}
+
+.terms-list li {
+    margin-bottom: 10px;
+}
+
+.share-link-btn {
+    background-color: #ffcc00;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.share-link-btn:hover {
+    background-color: #e6b800;
+}
+
+/* Existing responsive styles ... */
+
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #f39c12; /* Button color */
+    border: none;
+    color: white; /* White text */
+    padding: 12px 18px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s; /* Transition effects */
+    position: relative; /* For ripple effect */
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    transition: transform 0.5s;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    z-index: 0;
+}
+
+button:hover {
+    background-color: #e67e22; /* Darker shade on hover */
+    transform: scale(1.05); /* Scale effect */
+}
+
+button:hover::after {
+    transform: scale(3); /* Ripple effect */
+}
