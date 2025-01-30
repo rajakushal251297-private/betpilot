@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-8vfgrj0_vdb$vcw=ast0bz4azg@7gf^tv=2^7f7quup5&v#m01
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://betpilot.in',
+    'https://*.betpilot.in',
+]
 
 # Application definition
 

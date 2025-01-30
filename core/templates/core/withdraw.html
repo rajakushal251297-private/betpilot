@@ -21,7 +21,7 @@
             {% csrf_token %}
             <div class="form-group">
                 <label for="amount">Amount</label>
-                <input type="number" id="amountid" placeholder="200~50000" name="amount" min="200" required>
+                <input type="number" id="amountid" placeholder="200~50000" name="amount" min="500" max="{{balance}}" required>
             </div>
             <div class="form-group">
                 <label for="account-number">Bank Account Number</label>
